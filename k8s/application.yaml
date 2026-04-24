@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/dara-cod/mentoria_k8s#
-    targetRevision: HEAD
-    path: .
+    repoURL: https://github.com/dara-cod/mentoria_k8s
+    targetRevision: main
+    path: k8s
   destination:
     server: https://kubernetes.default.svc
-    namespace: mentora
+    namespace: mentoria
   syncPolicy:
     automated:
       prune: true
