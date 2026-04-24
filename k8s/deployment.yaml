@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mentoria-app
+  namespace: mentoria
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mentoria-app
+  template:
+    metadata:
+      labels:
+        app: mentoria-app
+    spec:
+      containers:
+      - name: mentoria-app
+        image: mentoria-app:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "500m"
